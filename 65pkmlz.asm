@@ -254,14 +254,14 @@ negative
 positive
 ; Positive offsets are two bytes.
 ; add to starting output address
-	clc
-	adc tmpdst+1
 	pha
 	iny
 	lda (src),y
+	clc
 	adc tmpdst
 	sta src
 	pla
+	adc tmpdst+1
 	sta src+1
 	dey
 
